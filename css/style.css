@@ -1,0 +1,192 @@
+@import url("fonts.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1440px;
+    background: rgb(19, 19, 19);
+}
+p {
+    color: rgb(255, 255, 255);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.upper-font {
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+section {
+    margin-top: 10px;
+    background: rgb(19, 19, 19);
+    max-width: 1440px;
+    max-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    width: 1171px;
+    overflow: hidden; /* Обрезаем всё, что выходит за границы контейнера */
+    position: relative; /* Позволяет корректно позиционировать кнопки */
+
+}
+
+.slides {
+    display: flex; /* Размещаем слайды в одну линию */
+    transition: transform 0.5s ease-in-out; /* Плавная анимация при смене слайдов */
+}
+
+.slide {
+    flex-shrink: 0; /* Запрещаем уменьшение размера слайдов */
+    position: relative; /* Позволяет позиционировать подписи внутри слайдов */
+    width: 100%; /* Слайды занимают всю ширину контейнера */
+    height: 552.28px;
+    display: block; /* Убираем возможные пробелы вокруг изображений */
+}
+/* Навигация по названию  */
+.city-navigation__container {
+    position: absolute;
+    width: 623px;
+    height: 24px;
+    right: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.city-nav__font{
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+}
+.city-nav__font:hover {
+    color: rgb(227, 184, 115);
+    transition: color 0.6s ease-in-out;
+}
+.active-slide{
+    color: rgb(227, 184, 115);
+    border-bottom: 1px solid rgb(227, 184, 115);
+}
+
+/* Описание слайда  */
+.description__container{
+    position: absolute;
+    width: 442px;
+    height: 390px;
+    top: 53px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.description__name{
+    width: 255px;
+    height: 66px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h1, .description-font{
+    color: rgba(227, 184, 115, 1);
+    font-size: 27px;
+    line-height: 31px;
+}
+.gold-line{
+    width: 92px;
+    height: 1px;
+    background: rgba(227, 184, 115, 1);
+    margin-top: 15%;
+}
+
+.description__text{
+    margin-top: 34px;
+    width: 442px;
+    height: 86px;
+}
+
+.description__parameters{
+    margin-top: 42px;
+    width: 442px;
+    height: 162px;
+    display: grid;
+    grid-template-columns: repeat(3, 175px);
+    grid-template-rows: repeat(2, 73px);
+    column-gap: 20px;
+    row-gap: 34px;
+    grid-template-areas: 
+        "city apartment"
+        "time cost";
+}
+
+.city-name{
+    grid-area: city;
+}
+
+.apartment-name{
+    grid-area: apartment;
+}
+
+.repairtime-name{
+    grid-area: time;
+}
+
+.repaircost-name{
+    grid-area: cost;
+}
+
+.other-gap{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.parameters__font{
+    color: rgba(227, 184, 115, 1);
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.photo-example{
+    position: absolute;
+    width: 679px;
+    height: 482px;
+    right: 0;
+    top: 53px;
+}
+
+/* Кнопки «Назад» и «Вперёд» */
+.btn__container{
+    position: absolute; /* Позволяет разместить поверх слайдов */
+    left: 0;
+    bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 206px;
+    height: 14px;
+    z-index: 2; /* Размещаем кнопки выше всех элементов */
+    
+}
+.prev, .dot, .next{
+    border: none; /* Убираем границы */
+    background: none;
+    cursor: pointer;
+}
