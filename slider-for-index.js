@@ -37,6 +37,18 @@ nextButton.addEventListener('click', () => {
     goToSlide(currentIndex + 1);
 });
 
+// Добавляем обработчик клика для точек
+const dots = document.querySelectorAll('.dot'); // Находим кнопки "точки"
+dots.forEach((dot, dotIndex) => {
+    dot.addEventListener('click', () => goToSlide(dotIndex) );
+});
+
+// Добавляем обработчик клика для названия объекта
+const place = document.querySelectorAll('.city-navigation__name'); // Находим кнопки названия места
+place.forEach((place, placeIndex) => {
+    place.addEventListener('click', () => goToSlide(placeIndex));
+});
+
 /**
      * Функция запуска автоматического перелистывания слайдов
      * Устанавливает интервал на три секунды
